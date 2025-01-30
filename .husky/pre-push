@@ -1,0 +1,20 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+# Get the current branch name
+branch_name=$(git rev-parse --abbrev-ref HEAD)
+
+# Allow specific branches like master and dev
+if [ "$branch_name" = "master" ] || [ "$branch_name" = "dev" ]; then
+  echo "✅ Branch '$branch_name' is allowed to push without naming restrictions."
+  exit 0
+fi
+
+# Define allowed branch name patterns (e.g., fix/, feat/, chore/, etc.)
+if ! echo "$branch_name" | grep -E '^(fix|feat|chore|refactor)/.+$' > /dev/null; then
+  echo "❌ Error: you're not allowed to push '$branch_name' because of naming restrictions"
+  echo "Allowed types: fix, feat, chore, refactor/$branch_name"
+  exit 1
+fi
+
+echo "✅ Branch name '$branch_name' follows the convention."
