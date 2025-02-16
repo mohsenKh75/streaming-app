@@ -1,21 +1,24 @@
-import React from 'react';
 import { Header } from './Header';
 import { Outlet } from 'react-router-dom';
+import { Box } from '@/components/core/Box';
+import { GridContainer } from '@/components/core/GridContainer';
+import { Footer } from './Footer';
 
 export function MainLayoutContainer({ children }: { children: React.ReactNode }) {
   return (
-    <div className='flex flex-col min-h-screen h-full py-4' dir='rtl'>
-      <header className='shadow-md p-4'>
+    <GridContainer direction='flex-col' className='mx-auto min-h-screen max-w-[480px] h-full' dir='rtl'>
+      <Box tag='header'>
         <Header />
-      </header>
-      <main className='flex-1 container mx-auto px-4'>{children}</main>
-      <footer className='p-4 text-center bg-black'>
-        <p>footer</p>
-      </footer>
-    </div>
+      </Box>
+      <Box tag='main' className='flex-1 container px-4'>
+        {children}
+      </Box>
+      <Box backgroundColor='bg-neutral-pure-black' tag='footer' className='p-4 text-center'>
+        <Footer />
+      </Box>
+    </GridContainer>
   );
 }
-
 export function LayoutWrapper() {
   return (
     <MainLayoutContainer>

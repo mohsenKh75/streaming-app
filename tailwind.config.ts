@@ -1,4 +1,5 @@
 import type { Config } from 'tailwindcss';
+const figmaTheme = require('./figma/tailwind.theme.json');
 
 export default {
   content: [
@@ -9,6 +10,7 @@ export default {
   theme: {
     extend: {
       colors: {
+        ...figmaTheme.colors,
         background: 'var(--background)',
         foreground: 'var(--foreground)'
       }
