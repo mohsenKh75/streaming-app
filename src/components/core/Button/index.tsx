@@ -49,8 +49,7 @@ export function Button({
       className={classnames('rounded-sm', className, {
         [`${backgroundColor} text-white`]: shape === 'filled',
         'flex items-center justify-center ': !inline,
-        'text-slate-300': disabled,
-        ' border border-primary-base text-primary-base': shape === 'outlined',
+        ' border border-neutral-pure-white': shape === 'outlined',
         'w-28 h-10': buttonType === BUTTON_TYPE.DEFAULT,
         'w-20 h-10': buttonType === BUTTON_TYPE.SMALL,
         'w-full h-12': fullSize

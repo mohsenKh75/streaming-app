@@ -1,9 +1,11 @@
 import { classnames } from '@/utils/classnames';
+import { Box } from '../Box';
 
 interface Props {
   size?: 'small' | 'medium' | 'large';
   color?: string;
   isLoading?: boolean;
+  className?: string;
 }
 
 const sizeMap = {
@@ -12,13 +14,14 @@ const sizeMap = {
   large: 'w-8 h-8 border-4'
 };
 
-export function Loading({ size = 'medium', color = 'border-white', isLoading = false }: Props) {
+export function Loading({ size = 'medium', color = 'border-white', isLoading = false, className }: Props) {
   const sizeClasses = sizeMap[size];
 
   return (
-    <div
+    <Box
       className={classnames(
         `inline-block ${sizeClasses} border-solid border-t-transparent animate-spin rounded-full ${color}`,
+        className,
         { hidden: !isLoading }
       )}
       role='status'
