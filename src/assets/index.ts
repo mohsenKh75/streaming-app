@@ -14,3 +14,5 @@ export const ASSETS = {
   bookmark: 'icons/bookmark.svg',
   download: 'icons/download.svg'
 };
+
+export const BANNERS = ['img/suggest-first.webp', 'img/suggest-sec.webp', 'img/suggest-third.jpg'];
