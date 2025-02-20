@@ -1,5 +1,6 @@
 import { Box } from '@/components/core/Box';
 import { EpisodeInfo } from '@/components/pages/Home/EpisodeInfo';
+import { EpisodesResolver } from '@/components/pages/Home/EpisodesResolver';
 import { HeaderContent } from '@/components/pages/Home/HeaderContent';
 import { headerContent } from '@/mock/headerMockData';
 import { useEffect, useState } from 'react';
@@ -35,6 +36,9 @@ function Home() {
       </Box>
       <Box className='py-5'>
         <EpisodeInfo />
+      </Box>
+      <Box className='pb-5 px-4'>
+        <EpisodesResolver />
       </Box>
     </>
   );
