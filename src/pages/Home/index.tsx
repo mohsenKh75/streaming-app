@@ -1,6 +1,5 @@
 import { Box } from '@/components/core/Box';
-import { GridContainer } from '@/components/core/GridContainer';
-import { Typography } from '@/components/core/Typography';
+import { EpisodeInfo } from '@/components/pages/Home/EpisodeInfo';
 import { HeaderContent } from '@/components/pages/Home/HeaderContent';
 import { headerContent } from '@/mock/headerMockData';
 import { useEffect, useState } from 'react';
@@ -33,6 +32,9 @@ function Home() {
       />
       <Box className='px-2'>
         <HeaderContent headerContent={headerContent} />
+      </Box>
+      <Box className='py-5'>
+        <EpisodeInfo />
       </Box>
     </>
   );
