@@ -4,9 +4,8 @@
     "neutral-pure-white": "#FFFFFF",
     "neutral-gray": "#262626",
     "neutral-base": "#1F2933",
-    "object-fill": "#F3F3F3",
-    "object-lowkey": "#959595",
-    "primary-active": "#DFD9EA"
+    "primary-base": "#FD4141",
+    "neutral-dark": "#7B8794"
   },
   "fontSize": {
     "title": [
@@ -31,6 +30,22 @@
         "letterSpacing": 0,
         "fontWeight": 500,
         "lineHeight": "16px"
+      }
+    ],
+    "body": [
+      16,
+      {
+        "letterSpacing": 0,
+        "fontWeight": 500,
+        "lineHeight": "24px"
+      }
+    ],
+    "body-strong": [
+      16,
+      {
+        "letterSpacing": 0,
+        "fontWeight": 700,
+        "lineHeight": "24px"
       }
     ]
   }
