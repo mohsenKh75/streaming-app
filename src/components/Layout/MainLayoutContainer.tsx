@@ -12,13 +12,17 @@ export function MainLayoutContainer({ children }: { children: React.ReactNode })
       className='mx-auto min-h-screen max-w-[480px] h-full'
       dir='rtl'
     >
-      <Box tag='header' className='fixed w-full z-10'>
+      <Box tag='header' className='fixed max-w-[480px] w-full z-10'>
         <Header />
       </Box>
-      <Box tag='main' className='flex-1 container mt-[41px]'>
+      <Box tag='main' className='flex-1 container my-[42px]'>
         {children}
       </Box>
-      <Box backgroundColor='bg-neutral-pure-black' tag='footer' className='p-4 text-center fixed bottom-0 z-10 w-full'>
+      <Box
+        backgroundColor='bg-neutral-pure-black'
+        tag='footer'
+        className='p-4 text-center fixed max-w-[480px] w-full bottom-0 z-10'
+      >
         <Footer />
       </Box>
     </GridContainer>
