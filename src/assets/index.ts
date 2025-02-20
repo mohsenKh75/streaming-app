@@ -7,5 +7,10 @@ export const ASSETS = {
   stream: 'icons/stream.svg',
   home: 'icons/home.svg',
   imdb: 'icons/imdb.svg',
-  like: 'icons/like.svg'
+  like: 'icons/like.svg',
+  play: 'icons/play.svg',
+  thumbsDown: 'icons/dislike.svg',
+  thumbsUp: 'icons/thumbsup.svg',
+  bookmark: 'icons/bookmark.svg',
+  download: 'icons/download.svg'
 };
