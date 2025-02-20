@@ -5,5 +5,7 @@ export const ASSETS = {
   archive: '/icons/archive.svg',
   search: '/icons/search.svg',
   stream: 'icons/stream.svg',
-  home: 'icons/home.svg'
+  home: 'icons/home.svg',
+  imdb: 'icons/imdb.svg',
+  like: 'icons/like.svg'
 };
