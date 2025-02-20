@@ -8,7 +8,7 @@ export interface BoxProps<T extends ValidTags = 'div'> {
   tag?: T;
   customRef?: ComponentProps<T>['ref'];
   backgroundColor?: `bg-${ColorType}`;
-  borderColor?: string;
+  borderColor?: `border-${ColorType}`;
   boxShadow?: string;
   typeTrackingId?: string;
   ref?: never;
