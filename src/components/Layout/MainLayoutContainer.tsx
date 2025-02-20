@@ -15,7 +15,7 @@ export function MainLayoutContainer({ children }: { children: React.ReactNode })
       <Box tag='header' className='fixed max-w-[480px] w-full z-10'>
         <Header />
       </Box>
-      <Box tag='main' className='flex-1 container my-[42px]'>
+      <Box tag='main' className='flex-1 container mb-[80px] mt-[42px]'>
         {children}
       </Box>
       <Box

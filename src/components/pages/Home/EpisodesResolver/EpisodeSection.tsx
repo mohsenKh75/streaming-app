@@ -18,7 +18,7 @@ export function EpisodesSection({ episodes, loadMore, pendingLoadMore, pending }
     <Box>
       <GridContainer className='pt-4' direction='flex-col'>
         {episodes?.items?.map((episode) => (
-          <GridContainer xSpacing='space-x-2' className='py-2'>
+          <GridContainer key={episode.id} xSpacing='space-x-2' className='py-2'>
             <MediaPic media={episode.src} mediaLength={episode.length} />
             <MediaDetail episode={episode.episode} rate={episode.rate} season={episode.season} title={episode.title} />
           </GridContainer>
