@@ -1,12 +1,13 @@
-import { ComponentProps, ElementType, ReactElement } from 'react';
+import { ElementType, ReactElement } from 'react';
 import { ColorType } from '../../../../figma/tailwindTypes';
 import { classnames } from '@/utils/classnames';
+import { ExtendedHTMLDivElement } from '@/components/shared/HorizentalScroll';
 
 export type ValidTags = keyof JSX.IntrinsicElements;
 
 export interface BoxProps<T extends ValidTags = 'div'> {
   tag?: T;
-  customRef?: ComponentProps<T>['ref'];
+  customRef?: React.RefObject<ExtendedHTMLDivElement | null>;
   backgroundColor?: `bg-${ColorType}`;
   borderColor?: `border-${ColorType}`;
   boxShadow?: string;

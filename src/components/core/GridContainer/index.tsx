@@ -1,8 +1,10 @@
 import { ReactElement } from 'react';
 import { Box, BoxProps, ValidTags } from '../Box';
 import { classnames } from '@/utils/classnames';
+import { ExtendedHTMLDivElement } from '@/components/shared/HorizentalScroll';
 
 export type GridContainerProps<T extends ValidTags = 'div'> = {
+  customRef?: React.RefObject<ExtendedHTMLDivElement | null>;
   display?: 'flex' | 'inline-flex';
   spacing?:
     | 'space-x-1 space-y-1'
@@ -66,12 +68,14 @@ export function GridContainer<T extends ValidTags = 'div'>({
   alignContent,
   className,
   children,
+  customRef,
   ...props
 }: GridContainerProps<T> & JSX.IntrinsicElements[T]): ReactElement {
   const boxTag = tag || ('div' as T);
   return (
     <Box<T>
       tag={boxTag}
+      customRef={customRef}
       className={classnames(
         display,
         xSpacing,
