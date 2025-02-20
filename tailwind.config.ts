@@ -13,6 +13,9 @@ export default {
         ...figmaTheme.colors,
         background: 'var(--background)',
         foreground: 'var(--foreground)'
+      },
+      fontSize: {
+        ...figmaTheme.fontSize
       }
     }
   },

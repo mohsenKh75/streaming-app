@@ -2,18 +2,35 @@
   "colors": {
     "neutral-pure-black": "#000000",
     "neutral-pure-white": "#FFFFFF",
-    "neutral-base": "##1F2933",
+    "neutral-gray": "#262626",
+    "neutral-base": "#1F2933",
     "object-fill": "#F3F3F3",
     "object-lowkey": "#959595",
     "primary-active": "#DFD9EA"
   },
   "fontSize": {
-    "title-small": [
-      20,
+    "title": [
+      20.25,
       {
         "letterSpacing": 0,
         "fontWeight": 700,
+        "lineHeight": "28px"
+      }
+    ],
+    "caption": [
+      10,
+      {
+        "letterSpacing": 0,
+        "fontWeight": 500,
         "lineHeight": "20px"
+      }
+    ],
+    "foot-note": [
+      11,
+      {
+        "letterSpacing": 0,
+        "fontWeight": 500,
+        "lineHeight": "16px"
       }
     ]
   }
