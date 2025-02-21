@@ -5,6 +5,8 @@ import { Episodes } from '@/apis/home/types';
 import { useApi } from '@/hooks/useApi';
 import { useEffect } from 'react';
 import { EpisodesSection } from './EpisodeSection';
+import { Box } from '@/components/core/Box';
+import { Loading } from '@/components/core/Loading';
 
 export function EpisodesResolver() {
   const location = useLocation();
@@ -32,6 +34,8 @@ export function EpisodesResolver() {
     pendingLoadMore: pendingThEpisodeMore
   } = useApi<Episodes>({ ep: thChunkEP });
 
+  const isPending = pendingFirstEpisode || pendingSecEpisode || pendingThEpisode;
+
   useEffect(() => {
     firstEpisodeRequest().then(() => navigate('#1'));
   }, []);
@@ -51,47 +55,37 @@ export function EpisodesResolver() {
   return (
     <>
       <SeasonNav />
-      {hash === '#1' && firstEpisodesData && (
-        <EpisodesSection
-          pending={pendingFirstEpisode}
-          pendingLoadMore={pendingFirstEpisodeMore}
-          loadMore={() =>
-            firstEpisodeLoadMore({
-              ep: firstChunkEP,
-              currentPage: firstEpisodesData?.pager?.current + 1,
-              totalPage: firstEpisodesData?.pager?.total
-            })
-          }
-          episodes={firstEpisodesData}
-        />
-      )}
-      {hash === '#2' && secEpisodesData && (
-        <EpisodesSection
-          pendingLoadMore={pendingSecEpisodeMore}
-          pending={pendingSecEpisode}
-          loadMore={() =>
-            secEpisodeLoadMore({
-              ep: secChunkEP,
-              currentPage: secEpisodesData?.pager?.current + 1,
-              totalPage: secEpisodesData?.pager?.total
-            })
-          }
-          episodes={secEpisodesData}
-        />
-      )}
-      {hash === '#3' && thEpisodesData && (
-        <EpisodesSection
-          pendingLoadMore={pendingThEpisodeMore}
-          pending={pendingThEpisode}
-          loadMore={() =>
-            thEpisodeLoadMore({
-              ep: thChunkEP,
-              currentPage: thEpisodesData?.pager?.current + 1,
-              totalPage: thEpisodesData?.pager?.total
-            })
-          }
-          episodes={thEpisodesData}
-        />
+      {isPending ? (
+        <Box className='flex h-[480px] justify-center items-center'>
+          <Loading size='large' isLoading />
+        </Box>
+      ) : (
+        <>
+          {hash === '#1' && firstEpisodesData && (
+            <EpisodesSection
+              pending={pendingFirstEpisode}
+              pendingLoadMore={pendingFirstEpisodeMore}
+              loadMore={firstEpisodeLoadMore}
+              episodes={firstEpisodesData}
+            />
+          )}
+          {hash === '#2' && secEpisodesData && (
+            <EpisodesSection
+              pendingLoadMore={pendingSecEpisodeMore}
+              pending={pendingSecEpisode}
+              loadMore={secEpisodeLoadMore}
+              episodes={secEpisodesData}
+            />
+          )}
+          {hash === '#3' && thEpisodesData && (
+            <EpisodesSection
+              pendingLoadMore={pendingThEpisodeMore}
+              pending={pendingThEpisode}
+              loadMore={thEpisodeLoadMore}
+              episodes={thEpisodesData}
+            />
+          )}
+        </>
       )}
     </>
   );
