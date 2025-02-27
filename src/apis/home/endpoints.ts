@@ -1,3 +1,3 @@
-export const firstChunkEP = 'https://run.mocky.io/v3/e373034b-6baf-418a-9bf4-dea6f660ab7f';
-export const secChunkEP = 'https://run.mocky.io/v3/13a1cb2f-0e1d-4854-9632-287d27226007';
-export const thChunkEP = 'https://run.mocky.io/v3/1df1e749-990a-49a3-9865-452970f19a09';
+export const firstChunkEP = 'https://run.mocky.io/v3/f7989f2d-fe91-4538-9f1f-1273a70da3e1';
+export const secChunkEP = 'https://run.mocky.io/v3/1f7a7150-2dc5-4172-a701-ce7173f54f4b';
+export const thChunkEP = 'https://run.mocky.io/v3/b2ca937b-50bd-40f9-a559-4e862ff823be';
